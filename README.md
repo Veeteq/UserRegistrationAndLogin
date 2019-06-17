@@ -1,7 +1,11 @@
-# Angular6Basics
+# User Registration And Login Page
 
-The source of the code is based on Web Tutorial by JavaBrains
-https://www.youtube.com/playlist?list=PLqq-6Pq4lTTb7JGBTogaJ8bm7f8VCvFkj
+The source of the code is based on Web Tutorial by Jason Watmore
+course:
+https://jasonwatmore.com/post/2018/10/29/angular-7-user-registration-and-login-example-tutorial
+youtube:
+https://www.youtube.com/playlist?list=PLZkSegaxllQRD07HYndLMMvinhvE5eXon
+
 
 
 
@@ -30,7 +34,5 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
-# Angular 6 Tutorial
-# User Registration And Login Page
-https://jasonwatmore.com/post/2018/10/29/angular-7-user-registration-and-login-example-tutorial
-https://www.youtube.com/playlist?list=PLZkSegaxllQRD07HYndLMMvinhvE5eXon
+
+
