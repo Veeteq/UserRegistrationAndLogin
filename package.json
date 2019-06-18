@@ -7,7 +7,7 @@
         "url": "https://github.com/Veeteq/UserRegistrationAndLogin.git"
     },
     "scripts": {
-        "start": "webpack-dev-server --mode development --open"
+        "start": "webpack-dev-server --mode development --host 0.0.0.0 --port 8080 --open"
     },
     "dependencies": {
         "@angular/common": "^8.0.0",

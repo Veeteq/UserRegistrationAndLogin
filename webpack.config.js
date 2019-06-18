@@ -3,7 +3,11 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const path = require('path');
 
 module.exports = {
-    entry: './src/main.ts',
+    entry: [
+        './src/main.ts',
+        'webpack-dev-server/client?http://0.0.0.0:8080',
+        'webpack/hot/only-dev-server'
+     ],    
     resolve: {
         extensions: ['.ts', '.js'],
         alias: {
