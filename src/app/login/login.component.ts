@@ -12,6 +12,7 @@ export class LoginComponent implements OnInit {
     submitted = false;
     returnUrl: string;
     error: string;
+    success: string;
 
     constructor(
         private formBuilder: FormBuilder,
@@ -19,10 +20,9 @@ export class LoginComponent implements OnInit {
         private router: Router,
         private authenticationService: AuthenticationService
     ) {
-        // redirect to home if already logged in
         if (this.authenticationService.currentUserValue) { 
             this.router.navigate(['/']);
-        }
+        }        
     }
 
     ngOnInit() {
@@ -31,17 +31,21 @@ export class LoginComponent implements OnInit {
             password: ['', Validators.required]
         });
 
-        // get return url from route parameters or default to '/'
         this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/';
+
+        if(this.route.snapshot.queryParams['registered']){
+            this.success = 'Registration successful!';
+        }
     }
 
-    // convenience getter for easy access to form fields
     get f() { return this.loginForm.controls; }
 
     onSubmit() {
         this.submitted = true;
 
-        // stop here if form is invalid
+        this.error = null;
+        this.success = null;
+
         if (this.loginForm.invalid) {
             return;
         }

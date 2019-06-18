@@ -58,6 +58,8 @@ module.exports = {
         runtimeChunk: true
     },
     devServer: {
-        historyApiFallback: true
+        historyApiFallback: true,
+        hot: true,
+        inline: true
     }
 }
