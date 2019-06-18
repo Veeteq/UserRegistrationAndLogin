@@ -4,6 +4,7 @@ import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 import { Router } from "@angular/router";
 import { AuthenticationService } from "@/_services/authentication.service";
 import { first } from "rxjs/operators";
+import { AlertService } from "@/_services/alert.service";
 
 @Component({ templateUrl: 'register.component.html' })
 export class RegisterComponent implements OnInit {
@@ -16,7 +17,8 @@ export class RegisterComponent implements OnInit {
         private formBuilder: FormBuilder,
         private router: Router,
         private authenticationService: AuthenticationService,
-        private userService: UserService
+        private userService: UserService,
+        private alertService: AlertService
     ) {
         if (this.authenticationService.currentUserValue) { 
             this.router.navigate(['/']);
@@ -37,6 +39,8 @@ export class RegisterComponent implements OnInit {
     onSubmit() {
         this.submitted = true;
 
+        this.alertService.clear();
+
         if (this.registerForm.invalid) {
             return;
         }
@@ -46,10 +50,11 @@ export class RegisterComponent implements OnInit {
             .pipe(first())
             .subscribe(
                 data => {
+                    this.alertService.success('Registration successful', true);
                     this.router.navigate(['/login'], { queryParams: {registered: true }});
                 },
                 error => {
-                    this.error = error;
+                    this.alertService.error(error);
                     this.loading = false;
                 });
     }

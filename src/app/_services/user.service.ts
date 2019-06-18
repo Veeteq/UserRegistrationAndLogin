@@ -15,6 +15,6 @@ export class UserService {
     }
 
     delete(id){
-        return this.httpClient.delete(`${config.apiUrl}/users/$(id)`);
+        return this.httpClient.delete(`${config.apiUrl}/users/${id}`);
     }
 }

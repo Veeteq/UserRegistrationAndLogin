@@ -12,6 +12,7 @@ import { appRoutingModule } from './app.routing';
 import { fakeBackendProvider } from './_helpers/fake-backend';
 import { JwtInterceptor } from './_helpers/jwt.interceptor';
 import { ErrorInterceptor } from './_helpers/error.interceptor';
+import { AlertComponent } from './_components';
 
 @NgModule({
     imports: [
@@ -24,7 +25,8 @@ import { ErrorInterceptor } from './_helpers/error.interceptor';
         AppComponent,
         HomeComponent,
         LoginComponent,
-        RegisterComponent
+        RegisterComponent,
+        AlertComponent
     ],
     providers: [
         { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
